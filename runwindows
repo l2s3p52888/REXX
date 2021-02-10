@@ -1,0 +1,40 @@
+/*  runWindows.rex 
+    
+    Runs a  Windows 
+      command from  a menu
+                                 */
+choice. = ""
+choice.1 = "Calc.exe"
+choice.2 = "Cmd.exe"
+choice.3 = "Excel.exe"
+choice.4 = "Explorer.exe"
+choice.5 = "IExplorer.exe"
+choice.6 = "Notepad.exe"
+choice.7 = "Winword.exe"
+choice.8 = "Trace.rex"
+
+do forever
+    "cls"
+    say "Type disired number and press Enter"
+    say "      or enter blank to quit"
+    say
+    say "1) Calc"
+    say "2) Cmd"
+    say "3) Excel "
+    say "4) Explorer"
+    say "5) Internet Explorer"
+    say "6) Notepad"
+    say "7) Word"
+    say "8) Rexx Trace"
+    say 
+    rc = charout(,">> ")
+    pull choice
+    if choice = "" then exit
+    if choice.choice = then do
+        say choice "is invalid, press enter to retry"
+        pull
+        iterate
+    end
+    "start" choice.choice
+end
+
